@@ -19,6 +19,7 @@
         , "ee-log":     "*"
         , "ee-argv":    "*"
         , "ee-waiter":  "*"
+        , "mime":       "*"
     }
     , "devDependencies": {}
     , "optionalDependencies": {}
