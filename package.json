@@ -1,7 +1,7 @@
 {
       "name":           "em-webfiles"
     , "description":    "web files middleware for ee-webservice"
-    , "version":        "0.1.4"
+    , "version":        "0.1.5"
     , "homepage":       "https://github.com/eventEmitter/em-webfiles"
     , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
     , "repository": {
@@ -14,11 +14,11 @@
         "url":          "https://github.com/eventEmitter/em-webfiles/issues"
     }
     , "dependencies": {
-          "ee-class":   "*"
-        , "ee-event":   "*"
-        , "ee-log":     "*"
-        , "ee-waiter":  "*"
-        , "mime":       "*"
+          "ee-class":   "0.4.x"
+        , "ee-event":   "0.1.x"
+        , "ee-log":     "0.2.x"
+        , "ee-waiter":  "0.1.x"
+        , "mime":       "1.2.x"
     }
     , "devDependencies": {}
     , "optionalDependencies": {}
