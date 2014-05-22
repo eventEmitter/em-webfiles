@@ -1,7 +1,7 @@
 {
       "name"                                : "em-webfiles"
     , "description"                         : "WWW Files middleware for ee-webservice"
-    , "version"                             : "0.2.0"
+    , "version"                             : "0.2.1"
     , "homepage"                            : "https://github.com/eventEmitter/em-webfiles"
     , "author"                              : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
     , "licence"                             : "mit"
