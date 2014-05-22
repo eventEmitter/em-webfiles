@@ -1,25 +1,36 @@
 {
-      "name":           "em-webfiles"
-    , "description":    "web files middleware for ee-webservice"
-    , "version":        "0.1.5"
-    , "homepage":       "https://github.com/eventEmitter/em-webfiles"
-    , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+      "name"                                : "em-webfiles"
+    , "description"                         : "WWW Files middleware for ee-webservice"
+    , "version"                             : "0.2.0"
+    , "homepage"                            : "https://github.com/eventEmitter/em-webfiles"
+    , "author"                              : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+    , "licence"                             : "mit"
     , "repository": {
-        "url":          "https://github.com/eventEmitter/em-webfiles"
+          "url"                             : "https://github.com/eventEmitter/em-webfiles.git"
+        , "type"                            : "git"
     }
     , "engines": {
-        "node":         "*"
+        "node"                              : ">=v0.10.17"
     }
     , "bugs": {
-        "url":          "https://github.com/eventEmitter/em-webfiles/issues"
+        "url"                               : "https://github.com/eventEmitter/em-webfiles/issues"
     }
     , "dependencies": {
-          "ee-class":   "0.4.x"
-        , "ee-event":   "0.1.x"
-        , "ee-log":     "0.2.x"
-        , "ee-waiter":  "0.1.x"
-        , "mime":       "1.2.x"
+          "ee-class"                        : "1.0.x"
+        , "ee-event-emitter"                : "0.1.x"
+        , "ee-log"                          : "0.2.x"
+        , "ee-async"                        : "0.2.x"
+        , "mime"                            : "1.2.x"
+        , "ee-argv"                         : "0.1.x"
+        , "ee-types"                        : "0.1.x"
     }
-    , "devDependencies": {}
-    , "optionalDependencies": {}
+    , "devDependencies"                     : {
+          "mocha"                           : "1.17.x"
+        , "em-webfiles-loader-filesystem"   : "0.1.x"
+    }
+    , "keywords"                            : ["ee", "webservice", "www"]
+    , "optionalDependencies"                : {}
+     , "scripts": {
+        "test"                              : "./node_modules/mocha/bin/mocha --reporter spec"
+    }
 }

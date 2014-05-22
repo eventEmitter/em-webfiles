@@ -1,3 +1,3 @@
 
 
-	module.exports = require( "./lib/Webfiles" );
+	module.exports = require('./lib/Webfiles');

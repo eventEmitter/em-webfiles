@@ -2,65 +2,32 @@
 
 http files middleware for ee-webservice
 
+## installation 
+	
+	npm install em-webfiles
+
+## build status
 
 
-	var   Webfiles 	= require( "ee-webfiles" )
-		, Class 	= require( "ee-class" )
-	    , log 		= require( "ee-log" );
-
-
-	var files = new Webfiles();
+[![Build Status](https://travis-ci.org/eventEmitter/em-webfiles.png?branch=master)](https://travis-ci.org/eventEmitter/em-webfiles)
 
 
 
-	// plugin module for ee-webfiles, you may use this to minify js / css or prerender templates or whatever
-	var SomeCompilerModule = new Class( {
-
-		// a file / folder was removed from the filesystem
-		remove: function( parentPath, filename, subtree, tree, next ){
-			// parentPath 	-> the folder that contains the removed file / folder
-			// filename 	-> file or foldername of the removed file / folder
-			// subtree 		-> the removed subtree
-			// tree 		-> the tree representing the fs inside the memory
-			// next 		-> call the next plugin module
-		}
+	var   Webfiles 	= require('ee-webfiles')
+	    , FSLoader 	= require();
 
 
-		// a file / folder was added to the filesystem
-		, add: function( parentPath, filename, subtree, tree, next ){
-			// parentPath 	-> the folder that contains the added file / folder
-			// filename 	-> file or foldername of the added file / folder
-			// subtree 		-> the added subtree
-			// tree 		-> the tree representing the fs inside the memory
-			// next 		-> call the next plugin module
-		}
+	var   files = new Webfiles()
+		, loader = new FSLoader({path: '/path/to/files'});
 
 
-		// initial load of the files from the fs
-		, load: function( path, tree, next ){
-			// path 		-> the path of the directory to be laoded
-			// tree 		-> the tree representing the fs inside the memory
-			// next 		-> call the next plugin module
-		}
-	} );
-
-
-	// add submodule to stack
-	files.use( new SomeCompilerModule() );
+	loader.on('load', function(err) {
+		files.use(loader);
+	});
 
 
 	// serve index.html, index.json & default.htm files as directory index
-	files.addDirectoryIndex( [ "index.html", "index.json" ] );
 	files.addDirectoryIndex( "default.htm" );
+	
 
-
-	// don't serve dot, mustache & .php files
-	files.addFilter( [ /\.mustache$/, /^\/\./ ] );
-	files.addFilter( /\.php$/ );
-
-
-	// load  a directory into memory
-	files.load( __dirname + "/var/www", function( err ){
-		if ( err ) throw err;
-		log.dir( files.tree );
-	} );
+	webservice.use(files);
