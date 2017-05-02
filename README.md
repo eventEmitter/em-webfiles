@@ -1,5 +1,7 @@
 # em-webfiles
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/em-webfiles.svg)](https://greenkeeper.io/)
+
 http files middleware for ee-webservice
 
 ## installation 
